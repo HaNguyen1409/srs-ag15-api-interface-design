@@ -1,0 +1,34 @@
+{
+  "$schema_version": 1,
+  "name": "srs-ag15-api-interface-design",
+  "version": "1.0.0",
+  "node_id": "AG-15",
+  "kind": "agent",
+  "summary": "Agent Node AG-15 (pha Thiết kế SOP): thiết kế API/giao diện tích hợp (IDA, TL-08) từ UC AG-10 + danh mục màn hình AG-07 — endpoint, request/response, phân quyền, mã lỗi, ánh xạ màn hình↔API. Chạy song song AG-14, đối chiếu tên với ERD ở B28.",
+  "repository": "https://github.com/HaNguyen1409/srs-ag15-api-interface-design",
+  "license": "MIT",
+  "interface": {
+    "contract": "SKILL.md — đầu vào/đầu ra là tài liệu Markdown/JSON mô tả trong skill; không gọi trực tiếp skill khác",
+    "output_artifact": null,
+    "sop_steps": [
+      {
+        "step": "28",
+        "title": "Thiết kế API/giao diện (IDA, TL-08) — song song B27",
+        "type": "Agent",
+        "receives_from": "B18 (UC + ERD logical), B12, B26 (B27 song song)",
+        "sends_to": "B29, dev"
+      }
+    ]
+  },
+  "upstream": {
+    "srs-ag10-functional-spec": "^1.0.0",
+    "srs-ag14-data-design": "^1.0.0",
+    "srs-ag07-screen-flow-design": "^1.0.0",
+    "srs-ag13-architecture-design": "^1.0.0"
+  },
+  "downstream": [
+    "srs-ag16-security-design"
+  ],
+  "orchestrates": {},
+  "runtime": null
+}
